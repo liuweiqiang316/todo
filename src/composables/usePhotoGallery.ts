@@ -33,7 +33,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
-    base64Data = (await convertBlobToBase64(blob)) as string;
+    base64Data = (await convertBlobToBase64(blob)) as any;
   }
   const savedFile = await Filesystem.writeFile({
     path: fileName,
