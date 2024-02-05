@@ -22,7 +22,7 @@ const convertBlobToBase64 = (blob: Blob) =>
   });
 
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-  let base64Data: string;
+  let base64Data: any;
   // "hybrid" will detect mobile - iOS or Android
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
